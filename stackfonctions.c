@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 23:35:47 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/14 23:49:12 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/15 21:44:02 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,13 @@ void	search_change_order(t_list *stack_a, int x, int i)
 	}
 }
 
-int	put_order(t_list **stack_a)
+int	put_order(t_list **stack_a, int *tab)
 {
 	int	size;
 	int	i;
-	int	*tab;
 
 	i = 0;
-	tab = NULL;
 	size = lstsize(*stack_a);
-	if (check_duplication(*stack_a, tab))
-		return (-1);
 	while (i < size)
 	{
 		search_change_order(*stack_a, tab[i], i);

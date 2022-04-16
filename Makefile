@@ -6,7 +6,7 @@
 #    By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 06:58:42 by oessamdi          #+#    #+#              #
-#    Updated: 2022/04/14 23:57:44 by oessamdi         ###   ########.fr        #
+#    Updated: 2022/04/15 23:34:20 by oessamdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CHECKER = checker
 
-SRC = push_swap.c lstfonctions.c arrayfonctions.c ft_atoi.c push.c quick_sort.c rotatea.c rotateb.c sort_three.c sort_four.c sort_two.c stackfonctions.c swap.c
+SRC = push_swap.c lstfonctions.c arrayfonctions.c ft_atoi.c push.c quick_sort.c rotatea.c rotateb.c sort_three.c sort_four.c sort_five.c sort_two.c stackfonctions.c swap.c
 
 CC = @gcc $(SRC) 
 

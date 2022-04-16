@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 23:30:21 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/15 01:06:45 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/15 03:14:27 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,7 @@ int	check_duplication(t_list *stack_a, int *tab)
 	i = 0;
 	size = lstsize(stack_a);
 	tab = set_array(stack_a, tab);
-	// while(i < size)
-	// {
-	// 	printf("tab[%d] = %d\n", i, tab[i]);
-	// 	i++;	
-	// }
 	ft_quick_sort(tab, 0, size - 1);
-	// i = 0;
-	// while(i < size)
-	// {
-	// 	printf("tab[%d] = %d\n", i, tab[i]);
-	// 	i++;	
-	// }
 	i = 0;
 	while (i < size - 1)
 	{
