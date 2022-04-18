@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:21:46 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/13 01:10:21 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:34:48 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	rrotateb(t_list **head, int x)
 		blast = lstblast(*head);
 		last->next = *head;
 		*head = last;
-		blast = NULL;
+		blast->next = NULL;
 	}
 	if (x != 1)
 		printf("rrb\n");

@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 23:35:47 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/15 21:44:02 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:32:32 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	init_list(t_list **head, int ac, char **av)
 		new = malloc(sizeof(t_list));
 		if (!new)
 			return (-1);
-		new->element = ft_atoi(av[i], &x);
+		new->nb = ft_atoi(av[i], &x);
 		new->next = NULL;
 		ft_lstadd_back(head, new);
 		if (x == -1)
@@ -40,14 +40,14 @@ int	init_list(t_list **head, int ac, char **av)
 	return (lstsize(*head));
 }
 
-void	search_change_order(t_list *stack_a, int x, int i)
+static void	search_change_order(t_list *stack_a, int x, int i)
 {
 	t_list	*lst;
 
 	lst = stack_a;
 	while (lst)
 	{
-		if (lst->element == x)
+		if (lst->nb == x)
 		{
 			lst->order = i;
 			return ;
@@ -78,7 +78,7 @@ int	stack_sorted(t_list *head)
 	h = head;
 	while (h && h->next)
 	{
-		if (h->element > h->next->element)
+		if (h->nb > h->next->nb)
 			return (-1);
 		h = h->next;
 	}

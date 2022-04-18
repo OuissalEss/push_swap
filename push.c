@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:21:46 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/15 22:59:43 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:26:40 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,5 @@ void	pushb(t_list **stack_a, t_list **stack_b)
 		h1->next = *stack_b;
 		*stack_b = h1;
 	}
-	
 	printf("pb\n");
 }
