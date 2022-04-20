@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:22:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/18 15:38:28 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/19 21:00:03 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	sort_stack(t_list *stack_a, t_list *stack_b, int size)
 	if (size == 5)
 		return (sort_five(&stack_a, &stack_b));
 	else
-		return (sort_large(&stack_a, &stack_b));
+		return (sort_big(&stack_a, &stack_b));
 	return (0);
 }
 
@@ -53,7 +53,8 @@ int	main(int ac, char **av)
 		return (error_msg("Error"));
 	put_order(&stack_a, tab);
 	sort_stack(stack_a, stack_b, size);
-	printf("sorted = %d", stack_sorted(stack_a));
+	printf("sorted = %d\n", stack_sorted(stack_a));
+	return (0);
 }
 
 // int	main(int ac, char **av)

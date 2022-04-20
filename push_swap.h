@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:54:12 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/18 14:53:44 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:59:10 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		error_msg(char *msg);
 int		sort_three(t_list **stack_a);
 int		sort_four(t_list **stack_a, t_list **stack_b);
 int		sort_five(t_list **stack_a, t_list **stack_b);
-int		sort_large(t_list **stack_a, t_list **stack_b);
+int		sort_big(t_list **stack_a, t_list **stack_b);
 int		sort_stack(t_list *stack_a, t_list *stack_b, int size);
 int		stack_sorted(t_list *head);
 
