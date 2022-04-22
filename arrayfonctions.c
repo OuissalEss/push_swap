@@ -6,13 +6,13 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 23:30:21 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/18 13:29:49 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/04/22 09:40:43 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	*set_array(t_list *stack_a, int *t)
+int	*set_array(t_list *stack_a, int *t)
 {
 	t_list	*lst;
 	int		i;
