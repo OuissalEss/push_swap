@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:22:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/10 19:50:34 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:35:30 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // static void	print_stack(t_list *stack_a)
 // {
 // 	t_list	*sa;
-	
 // 	sa = stack_a;
 // 	int i = 0;
 // 	while (sa)
@@ -30,7 +29,9 @@ int	sort_stack(t_list *stack_a, t_list *stack_b, t_vars	*vars)
 {
 	if (vars->size == 1)
 		return (0);
-	if (vars->size == 3)
+	if (vars->size == 2)
+		sort_two(&stack_a);
+	else if (vars->size == 3)
 		sort_three(&stack_a);
 	else if (vars->size == 4)
 		sort_four(&stack_a, &stack_b);
@@ -64,6 +65,7 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	put_order(&stack_a, vars.tab);
-	sort_stack(stack_a, stack_b, &vars);
+	if (stack_sorted(stack_a) != 1)
+		sort_stack(stack_a, stack_b, &vars);
 	return (0);
 }

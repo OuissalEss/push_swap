@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:54:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/10 19:39:44 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:44:08 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,6 @@ static void	push_to_b(t_list **sa, t_list **sb, t_vars *v)
 		}
 	}
 	rotatea(sa, 1);
-}
-
-static int	rb_or_rrb(t_list *sb, int n)
-{
-	int		i;
-	int		size_b;
-	t_list	*lst;
-
-	i = 1;
-	lst = sb;
-	size_b = lstsize(sb);
-	while (lst->nb != n)
-	{
-		i++;
-		lst = lst->next;
-	}
-	if (i <= size_b / 2)
-		return (1);
-	return (2);
 }
 
 static void	push_to_a2(t_list **sa, t_list **sb, t_vars *v)
@@ -94,6 +75,15 @@ static void	push_to_a(t_list **sa, t_list **sb, t_vars *v)
 	}
 }
 
+void	update_first_last(t_list **sb, t_vars *v)
+{
+	if (lstsize(*sb) == v->last - v->first)
+	{
+		v->first -= v->div;
+		v->last += v->div;
+	}
+}
+
 void	sort_big_stack(t_list **sa, t_list **sb, t_vars *v)
 {
 	t_list	*top;
@@ -107,17 +97,13 @@ void	sort_big_stack(t_list **sa, t_list **sb, t_vars *v)
 	v->last = v->middle + v->div;
 	while (*sa)
 	{
-		push_to_b(sa, sb, v);
-		if (lstsize(*sb) == v->last - v->first)
-		{
-			v->first -= v->div;
-			v->last += v->div;
-		}
 		if (v->first < 0 || v->last > v->size)
 		{
 			v->first = 0;
 			v->last = v->size - 1;
 		}
+		push_to_b(sa, sb, v);
+		update_first_last(sb, v);
 	}
 	push_to_a(sa, sb, v);
 	while ((*sa)->order != 0)

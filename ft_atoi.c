@@ -6,11 +6,18 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:49:56 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/10 19:07:45 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:27:22 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	check_min_max(char c, int sign, unsigned long res, int *checker)
+{
+	if (c != '\0' || (sign == 1 && res > 2147483647)
+		|| (sign == -1 && res > 2147483648))
+		*checker = -1;
+}
 
 int	ft_atoi(char const *str, int *checker)
 {
@@ -36,8 +43,6 @@ int	ft_atoi(char const *str, int *checker)
 		res = (res * 10) + str[i] - '0';
 		i++;
 	}
-	if (str[i] != '\0' || (sign == 1 && res > 2147483647)
-		|| (sign == -1 && res > 2147483648))
-		*checker = -1;
+	check_min_max(str[i], sign, res, checker);
 	return ((int) res * sign);
 }
