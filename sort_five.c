@@ -6,13 +6,13 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:22:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/22 08:59:12 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:24:33 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_five(t_list **stack_a, t_list **stack_b)
+void	sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int	pb;
 
@@ -35,5 +35,4 @@ int	sort_five(t_list **stack_a, t_list **stack_b)
 			rotatea(stack_a, 1);
 		pb--;
 	}
-	return (0);
 }

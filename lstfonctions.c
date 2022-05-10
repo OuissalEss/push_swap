@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:49:56 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/18 13:26:10 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:46:53 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void	free_list(t_list **head)
 		l = h;
 		h = h->next;
 		free(l);
+		l = NULL;
 	}
 }

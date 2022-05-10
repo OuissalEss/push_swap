@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:49:56 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/11 02:44:56 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:07:45 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ int	ft_atoi(char const *str, int *checker)
 			sign *= -1;
 		i++;
 	}
+	if (str[i] == '\0')
+		*checker = -1;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = (res * 10) + str[i] - '0';
 		i++;
 	}
-	if (str[i] != '\0' || (sign == 1 && res > 9223372036854775807)
-		|| (sign == -1 && res > 9223372036854775807))
+	if (str[i] != '\0' || (sign == 1 && res > 2147483647)
+		|| (sign == -1 && res > 2147483648))
 		*checker = -1;
 	return ((int) res * sign);
 }

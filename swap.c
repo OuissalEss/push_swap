@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:21:46 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/22 08:58:14 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:11:18 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	swapa(t_list **head, int x)
 		(*head)->next = h;
 	}
 	if (x != 0)
-		printf("sa\n");
+		write(1, "sa\n", 3);
 }
 
 void	swapb(t_list **head, int x)
@@ -43,12 +43,12 @@ void	swapb(t_list **head, int x)
 		(*head)->next = h;
 	}
 	if (x != 0)
-		printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
 void	swaps(t_list **head_a, t_list **head_b)
 {
 	swapa(head_a, 0);
 	swapb(head_b, 0);
-	printf("ss\n");
+	write(1, "ss\n", 3);
 }

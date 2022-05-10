@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:21:46 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/18 13:26:40 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:00:55 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	pusha(t_list **stack_b, t_list **stack_a)
 		*stack_b = h1->next;
 		h1->next = *stack_a;
 		*stack_a = h1;
+		write(1, "pa\n", 3);
 	}
-	printf("pa\n");
 }
 
 void	pushb(t_list **stack_a, t_list **stack_b)
@@ -40,6 +40,6 @@ void	pushb(t_list **stack_a, t_list **stack_b)
 		*stack_a = h1->next;
 		h1->next = *stack_b;
 		*stack_b = h1;
+		write(1, "pb\n", 3);
 	}
-	printf("pb\n");
 }

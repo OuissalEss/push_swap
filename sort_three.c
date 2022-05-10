@@ -6,13 +6,13 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:22:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/04/22 08:58:36 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:24:23 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_three(t_list **stack_a)
+void	sort_three(t_list **stack_a)
 {
 	while (stack_sorted(*stack_a) != 1)
 	{
@@ -28,5 +28,4 @@ int	sort_three(t_list **stack_a)
 					&& ((*stack_a)->next->nb < (*stack_a)->next->next->nb))))
 			swapa(stack_a, 1);
 	}
-	return (0);
 }
