@@ -6,13 +6,13 @@
 #    By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 06:58:42 by oessamdi          #+#    #+#              #
-#    Updated: 2022/05/11 01:10:10 by oessamdi         ###   ########.fr        #
+#    Updated: 2022/05/11 01:57:39 by oessamdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH_SWAP = push_swap
+NAME = push_swap
 
-CHECKER = checker
+bonus = checker
 
 SRC_PUSH_SWAP = push_swap.c lstfonctions.c arrayfonctions.c Libft.c push.c quick_sort.c \
 	rotatea.c rotateb.c rotate.c sort_two_three.c sort_four.c sort_five.c swap.c \
@@ -34,14 +34,16 @@ OBJ_CHECKER = $(SRC_CHECKER:.c=.o)
 
 RM = @rm -f
 
-all : $(PUSH_SWAP)
+all : $(NAME)
 
-$(PUSH_SWAP) : $(OBJ_PUSH_SWAP) 
-		@$(CC) $(CFLAGS) $(OBJ_PUSH_SWAP) -o $(PUSH_SWAP)
+bonus : $(bonus)
+
+$(NAME) : $(OBJ_PUSH_SWAP) 
+		@$(CC) $(CFLAGS) $(OBJ_PUSH_SWAP) -o $(NAME)
 		@echo "\033[1;32mPUSH_SWAP CREATED!"
 
-$(CHECKER) : $(OBJ_CHECKER)
-		@$(CC) $(CFLAGS) $(OBJ_CHECKER) -o $(CHECKER)
+$(bonus) : $(OBJ_CHECKER)
+		@$(CC) $(CFLAGS) $(OBJ_CHECKER) -o $(bonus)
 		@echo "\033[1;32mCHECKER CREATED!"
 
 .c.o :
@@ -53,7 +55,7 @@ clean :
 
 fclean :
 	$(RM) *.o
-	$(RM) $(PUSH_SWAP) $(CHECKER)
+	$(RM) $(NAME) $(bonus)
 	@echo "Removed all executbles"
 
 re : fclean all
