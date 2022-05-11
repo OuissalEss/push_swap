@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   Libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:49:56 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/10 21:27:22 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/11 00:46:10 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+}
 
 static void	check_min_max(char c, int sign, unsigned long res, int *checker)
 {

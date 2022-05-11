@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 15:21:46 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/11 00:30:15 by oessamdi         ###   ########.fr       */
+/*   Created: 2021/11/22 23:51:49 by oessamdi          #+#    #+#             */
+/*   Updated: 2022/05/11 00:48:16 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	rotater(t_list **head_a, t_list **head_b, int x)
-{
-	rotatea(head_a, 0);
-	rotateb(head_b, 0);
-	if (x != 0)
-		write(1, "rr\n", 3);
-}
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-void	rrotater(t_list **head_a, t_list **head_b, int x)
-{
-	rrotatea(head_a, 0);
-	rrotateb(head_b, 0);
-	if (x != 0)
-		write(1, "rrr\n", 4);
-}
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
+#endif

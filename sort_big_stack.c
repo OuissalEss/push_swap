@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:54:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2022/05/10 21:44:08 by oessamdi         ###   ########.fr       */
+/*   Updated: 2022/05/11 00:47:35 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	push_to_b(t_list **sa, t_list **sb, t_vars *v)
 			return ;
 		if ((*sa)->nb == v->tab[i])
 		{
-			pushb(sa, sb);
+			pushb(sa, sb, 1);
 			if ((*sb)->nb <= v->tab[v->middle])
 				rotateb(sb, 1);
 			return ;
@@ -40,7 +40,7 @@ static void	push_to_a2(t_list **sa, t_list **sb, t_vars *v)
 	if (sa_last && (sa_last->nb == v->tab[v->last]
 			|| sa_last->nb < (*sb)->nb))
 	{
-		pusha(sb, sa);
+		pusha(sb, sa, 1);
 		rotatea(sa, 1);
 	}
 	else
@@ -62,7 +62,7 @@ static void	push_to_a(t_list **sa, t_list **sb, t_vars *v)
 		sa_last = lstlast(*sa);
 		if ((*sb)->nb == v->tab[v->i])
 		{
-			pusha(sb, sa);
+			pusha(sb, sa, 1);
 			v->i--;
 		}
 		else if (sa_last && sa_last->nb == v->tab[v->i])
@@ -86,8 +86,6 @@ void	update_first_last(t_list **sb, t_vars *v)
 
 void	sort_big_stack(t_list **sa, t_list **sb, t_vars *v)
 {
-	t_list	*top;
-
 	if (v->size <= 155)
 		v->div = v->size / 5;
 	else
